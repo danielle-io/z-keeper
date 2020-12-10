@@ -1,0 +1,34 @@
+<ion-content class="star-background">
+    <!-- Margin to account for header in app component -->
+    <div class="ion-padding" style="margin-top: 60px;">
+
+      <div>
+        <p class="instructions" *ngIf="startTracking">Click Start Tracking if you're ready for bed.</p>
+
+        <p class="instructions" *ngIf="stopTracking">
+          Click Stop Tracking to end your sleep tracking.
+        </p>
+      </div>
+
+      <div>
+        <ion-button size="small" (click)="startTrackingClicked()" disabled={{!startTracking}}>
+          <ion-icon name="play" style="margin-right: 5px;"></ion-icon>Start tracking
+        </ion-button>
+        <ion-button size="small" (click)="stopTrackingClicked()" disabled={{!stopTracking}}>
+          <ion-icon name="square" style="margin-right: 5px;"></ion-icon>Stop tracking
+        </ion-button>
+        <div>
+          <div *ngIf="stopTracking">
+            <p>
+              <small>
+                You started tracking your sleep at
+                {{lastNight.start_sleep.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}} on
+                {{lastNight.month}}/{{lastNight.day}}
+              </small>
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+</ion-content>
