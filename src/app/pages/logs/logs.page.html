@@ -1,0 +1,92 @@
+<ion-content class="star-background-two">
+  <!-- Margin to account for header in app component -->
+  <div class="ion-padding" style="margin-top: 60px;">
+    <!-- Segment with default selection -->
+    <ion-segment value="sleepLogSegment" (ionChange)="logChanged($event)">
+      <ion-segment-button value="sleepLogSegment">
+        <ion-label>Sleep Log</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="tirednessLogSegment">
+        <ion-label>Tiredness Log</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+
+
+    <!-- The view for sleep log -->
+    <div>
+      <div *ngIf="currentView === 'sleepLogSegment'" style="padding-top: 5px;">
+        <table class="table table-sm table-light table-striped" style="margin-left:auto; margin-right: auto;" *ngIf="!hideOvernight">
+          <thead>
+            <tr style="justify-content: space-between;">
+              <!-- <th scope="col">#</th> -->
+              <th scope="col">Date</th>
+              <th scope="col">Total</th>
+              <th scope="col">Bed</th>
+              <th scope="col">Wake</th>
+              <th scope="col">
+              </th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let log of overnightLogs; let rowNumber = index;">
+              <td>{{log.month}}/{{log.day}}</td>
+
+              <td>{{log.hours}}h, {{log.minutes}}m</td>
+              <td>
+                {{log.start_sleep.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}}
+              </td>
+              <td>
+                {{log.end_sleep.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}}
+              </td>
+              <td style="font-size: 15px; color: rgb(233, 83, 83)" (click)="deleteLog(log, 'overnight')">
+                x
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="no-table" *ngIf="hideOvernight">
+          <p>You currently have no sleep logs.</p>
+        </div>
+      </div>
+
+      <!-- The view for tired log -->
+      <div *ngIf="currentView === 'tirednessLogSegment'" style="padding-top: 5px;">
+        <table class="table table-sm table-light table-striped" style="margin-left: auto;
+        margin-right: auto;  border-spacing: 22px 15px;" *ngIf="!hideScale">
+          <thead>
+            <tr>
+              <!-- <th scope="col">#</th> -->
+              <th scope="col">Date</th>
+              <th scope="col">Time</th>
+              <th scope="col">Rating</th>
+              <th scope="col"></th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let log of scaleLogs; let rowNumber = index;">
+              <!-- <td>{{rowNumber + 1}}</td> -->
+              <td>{{log.month}}/{{log.day}}</td>
+              <td>
+                {{log.date_time.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}}
+              </td>
+              <td style="padding-left: 10px;">
+                {{log.scale_value}}
+              </td>
+              <td style="font-size: 15px; color: rgb(233, 83, 83)" (click)="deleteLog(log, 'scale')">
+                x
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="no-table" *ngIf="hideScale">
+          <p>You currently have no sleep scale logs.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</ion-content>
