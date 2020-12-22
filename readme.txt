@@ -4,3 +4,5 @@ If Ionic is not installed on your machine run command npm install -g ionic to in
 If Angular is not installed on your machine run command npm install -g @angular/cli  to install it.
 
 Run ionic lab to run the project - mobile simulators for iPhone and Android will appear.
+
+!["Home Page of App"](https://github.com/danielle-io/z-keeper/blob/master/src/assets/images/app-images/homePage.png?raw=true)
