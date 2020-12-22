@@ -5,4 +5,6 @@ If Angular is not installed on your machine run command npm install -g @angular/
 
 Run ionic lab to run the project - mobile simulators for iPhone and Android will appear.
 
-<img src="/assets/images/app-images/homePage.png">
+<img src="assets/images/app-images/homePage.png">
+
+
