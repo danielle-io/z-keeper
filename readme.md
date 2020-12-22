@@ -3,17 +3,16 @@ This cross platform application created with Ionic using Angular allows you to t
 
 <h1>To Run:</h1>
 If Ionic is not installed on your machine run:
-```
-npm install -g ionic
-```
+
+<pre><code>npm install -g ionic</pre></code>
+
 If Angular is not installed on your machine run:
-```
-npm install -g @angular/cli
-```
+
+<pre><code>npm install -g @angular/cli</pre></code>
+
 To run mobile simulators for iPhone and Android in a browser run:
-```
-ionic lab
-```
+
+<pre><code>ionic lab</pre></code>
 
 <h1>App Images</h1>
 <h2>Home Page</h2>
