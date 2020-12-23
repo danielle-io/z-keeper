@@ -26,8 +26,6 @@ To run mobile simulators for iPhone and Android in a browser run:
 <h4>Using list view to submit tiresness rating</h4>
 <img src="/src/assets/images/app-images/homePageListView.png">
 
-<img src="/src/assets/images/app-images/homePage.png">
-
 <h3>Sleep Tracker Page</h3>
 <img src="/src/assets/images/app-images/sleepTracker.png">
 
